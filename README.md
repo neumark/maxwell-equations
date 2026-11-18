@@ -37,7 +37,7 @@ Development dependency note: the registry currently reports an unpatched `picoma
 
 The platform renders the default export in `src/App.tsx`. That file imports the application stylesheet directly. `src/main.tsx` and `index.html` are used for local Vite development only. The `immediately.run` entry in `package.json` declares this as an app; no SDK features, credentials, API keys, or privileged capabilities are needed.
 
-The public repository is the app’s source. The presentation URL points to `main`; no separate hosting service is required. Google Fonts are optional visual enhancements, with local serif and sans-serif fallbacks.
+The public repository is the app’s source. The presentation URL points to `main`; no separate hosting service is required. The Latin subsets of DM Sans and Instrument Serif are embedded locally, so the design works with network access disabled. Their SIL Open Font Licenses are included in `licenses/`.
 
 ## Physics and accessibility
 

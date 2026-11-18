@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { electricField, inductionCirculation, magneticCirculation, wavelength, waveValue } from './physics.js';
+import './fonts.css';
 import './style.css';
 
 const laws = [

@@ -47,6 +47,9 @@ test('wave pause, field toggles, and constant-speed frequency control',async({pa
 test('responsive layout, reduced motion, and screenshots',async({page})=>{
   await page.emulateMedia({reducedMotion:'reduce'});
   await page.setViewportSize({width:1440,height:1000}); await page.goto('/'); await page.evaluate(()=>document.fonts.ready);
+  await page.addStyleTag({content: ':root { --line: white; background: #090b0c; } body { background: #090b0c; font-family: monospace; }'});
+  expect(await page.locator('.app').evaluate(el=>getComputedStyle(el).backgroundColor)).toBe('rgb(246, 245, 239)');
+  expect(await page.locator('.app').evaluate(el=>getComputedStyle(el).getPropertyValue('--line'))).toBe('#d9ddd2');
   await expect(page.getByRole('button',{name:'▷ Play'})).toBeVisible();
   await page.screenshot({path:'/private/tmp/maxwell-desktop.png',fullPage:true});
   for(const width of [390,320]){
